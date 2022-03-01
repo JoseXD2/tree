@@ -349,13 +349,6 @@ class Note extends FlxSprite
 		{
 			if (alpha > 0.3)
 				alpha = 0.3;
-		}
-	}
-}
-
-
-		 (prevNote == null)
-			prevNote = this;
 
 		this.prevNote = prevNote;
 		isSustainNote = sustainNote;
