@@ -66,6 +66,8 @@ class Note extends FlxSprite
 
 	public var noAnimation:Bool = false;
 	public var hitCausesMiss:Bool = false;
+	public var distance:Float = 2000;//plan on doing scroll directions soon -bb
+	public var isPresent:Bool = false;
 
 	private function set_texture(value:String):String {
 		if(texture != value) {
@@ -95,14 +97,17 @@ class Note extends FlxSprite
 					} else {
 						missHealth = 0.3;
 					}
+					hitCausesMiss = true;
 				case 'Present Note':
 					ignoreNote = mustPress;
 					reloadNote('PRESENT');
 					noteSplashTexture = 'PRESENTnoteSplashes';
 					colorSwap.hue = 0;
-				        colorSwap.saturation = 0;
+					colorSwap.saturation = 0;
 					colorSwap.brightness = 0;
-					if(isSustainNote)
+					isPresent = true;
+				case 'No Animation':
+					noAnimation = true;
 			}
 			noteType = value;
 		}
@@ -158,8 +163,11 @@ class Note extends FlxSprite
 
 		if (isSustainNote && prevNote != null)
 		{
-			alpha = 0.6;
-			multAlpha = 0.6;
+			if (!isPresent) {
+				alpha = 0.6;
+				multAlpha = 0.6;
+			}
+
 			if(ClientPrefs.downScroll) flipY = true;
 
 			offsetX += width / 2;
@@ -261,6 +269,9 @@ class Note extends FlxSprite
 		}
 		if(isSustainNote) {
 			scale.y = lastScaleY;
+			if(ClientPrefs.keSustains) {
+				scale.y *= 0.75;
+			}
 		}
 		updateHitbox();
 
@@ -292,8 +303,7 @@ class Note extends FlxSprite
 			animation.addByPrefix('bluehold', 'blue hold piece');
 		}
 
-		
-		setGraphicSize(Std.int(width * ClientPrefs.noteSize));
+		setGraphicSize(Std.int(width * 0.7));
 		updateHitbox();
 	}
 
@@ -342,7 +352,7 @@ class Note extends FlxSprite
 
 		if (tooLate)
 		{
-			if (alpha > 0.3)
+			if (alpha > 0.3 && !isPresent)
 				alpha = 0.3;
 		}
 	}
