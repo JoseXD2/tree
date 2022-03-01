@@ -452,13 +452,13 @@ class PlayState extends MusicBeatState
 				}
 
 				case 'cbg':
-					var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('datree/bg/cbg'));
+					var bg:FlxSprite:FlxSprite = new FlxSprite().loadGraphic(Paths.image('datree/bg/cbg'));
 					bg.x = -1840;
 					bg.y = -700;
 					bg.antialiasing = ClientPrefs.globalAntialiasing;
 					add(bg);
 					
-					presents = new FlxSprite().loadGraphic(Paths.image('datree/bg/presents'));
+					presents:FlxSprite = new FlxSprite().loadGraphic(Paths.image('datree/bg/presents'));
 					presents.setGraphicSize(Std.int(presents.width * 0.95));
 					presents.updateHitbox();
 					presents.x = -815;
@@ -474,14 +474,14 @@ class PlayState extends MusicBeatState
 					add(fireplace);
 					fireplace.animation.play('idle');
 	
-					bulb = new FlxSprite();
+					bulb:FlxSprite = new FlxSprite();
 					bulb.x = -1610;
 					bulb.y = -600;
 					bulb.frames = Paths.getSparrowAtlas('datree/bg/blubs');
 					bulb.animation.addByPrefix('idle', "Symbol 2", 24);
 					bulb.antialiasing = ClientPrefs.globalAntialiasing;
 	
-					jah = new FlxSprite(); //respect to the homie jah da man -lunar
+					jah:FlxSprite = new FlxSprite(); //respect to the homie jah da man -lunar
 					jah.x = 610;
 					jah.y = -525;
 					jah.frames = Paths.getSparrowAtlas('datree/bg/deer');
