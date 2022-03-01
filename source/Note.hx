@@ -102,7 +102,7 @@ class Note extends FlxSprite
 					colorSwap.hue = 0;
 					colorSwap.saturation = 0;
 					colorSwap.brightness = 0;
-					if(isPresentNote) {
+					if(isPresentNote) = true
 				case 'No Animation':
 					noAnimation = true;
 			}
