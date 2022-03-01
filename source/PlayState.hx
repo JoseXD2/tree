@@ -458,7 +458,7 @@ class PlayState extends MusicBeatState
 					bg.antialiasing = ClientPrefs.globalAntialiasing;
 					add(bg);
 					
-					presents:FlxSprite = new FlxSprite().loadGraphic(Paths.image('datree/bg/presents'));
+					var presents:FlxSprite = new FlxSprite().loadGraphic(Paths.image('datree/bg/presents'));
 					presents.setGraphicSize(Std.int(presents.width * 0.95));
 					presents.updateHitbox();
 					presents.x = -815;
