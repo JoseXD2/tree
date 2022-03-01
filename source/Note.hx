@@ -354,7 +354,7 @@ class Note extends FlxSprite
 }
 
 
-		if (prevNote == null)
+		 (prevNote == null)
 			prevNote = this;
 
 		this.prevNote = prevNote;
