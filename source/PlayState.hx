@@ -452,7 +452,7 @@ class PlayState extends MusicBeatState
 				}
 
 				case 'cbg':
-					var bg:FlxSprite:FlxSprite = new FlxSprite().loadGraphic(Paths.image('datree/bg/cbg'));
+					var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('datree/bg/cbg'));
 					bg.x = -1840;
 					bg.y = -700;
 					bg.antialiasing = ClientPrefs.globalAntialiasing;
