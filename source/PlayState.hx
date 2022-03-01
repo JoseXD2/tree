@@ -655,6 +655,61 @@ class PlayState extends MusicBeatState
 					bg.scale.set(6, 6);
 					bg.antialiasing = false;
 					add(bg);
+			case 'cbg':
+					var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('datree/bg/cbg'));
+					bg.x = -1840;
+					bg.y = -700;
+					bg.antialiasing = ClientPrefs.globalAntialiasing;
+					add(bg);
+					
+					var presents:FlxSprite = new FlxSprite().loadGraphic(Paths.image('datree/bg/presents'));
+					presents.setGraphicSize(Std.int(presents.width * 0.95));
+					presents.updateHitbox();
+					presents.x = -815;
+					presents.y = 725;
+					presents.antialiasing = ClientPrefs.globalAntialiasing;
+					
+					var fireplace:FlxSprite = new FlxSprite();
+					fireplace.x = 1100;
+					fireplace.y = -600;
+					fireplace.frames = Paths.getSparrowAtlas('datree/bg/fire');
+					fireplace.animation.addByPrefix('idle', "fireplace full", 24);
+					fireplace.antialiasing = ClientPrefs.globalAntialiasing;
+					add(fireplace);
+					fireplace.animation.play('idle');
+	
+					var bulb:FlxSprite = new FlxSprite();
+					bulb.x = -1610;
+					bulb.y = -600;
+					bulb.frames = Paths.getSparrowAtlas('datree/bg/blubs');
+					bulb.animation.addByPrefix('idle', "Symbol 2", 24);
+					bulb.antialiasing = ClientPrefs.globalAntialiasing;
+	
+					var jah:FlxSprite = new FlxSprite(); //respect to the homie jah da man -lunar
+					jah.x = 610;
+					jah.y = -525;
+					jah.frames = Paths.getSparrowAtlas('datree/bg/deer');
+					jah.animation.addByIndices('idle','Deer',[0], "", 24, true);
+					jah.animation.addByIndices('looking','Deer',[13], "", 24, true);
+					add(jah);
+					jah.animation.play('idle');
+
+					var bpresents:FlxSprite = new FlxSprite().loadGraphic(Paths.image('datree/bg/bigger presents'));
+					bpresents.setGraphicSize(Std.int(bpresents.width * 1.6));
+					bpresents.updateHitbox();
+					bpresents.x = -909;
+					bpresents.y = 660;
+					bpresents.antialiasing = ClientPrefs.globalAntialiasing;
+					add(bpresents);
+
+					var fireglow:FlxSprite = new FlxSprite().loadGraphic(Paths.image('datree/bg/fire glow'));
+					fireglow.x = 970;
+					fireglow.y = -600;
+					fireglow.antialiasing = ClientPrefs.globalAntialiasing;
+					add(fireglow);
+
+					add(bulb);
+					bulb.animation.play('idle');
 				}
 		}
 
