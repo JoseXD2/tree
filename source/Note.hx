@@ -95,7 +95,14 @@ class Note extends FlxSprite
 					} else {
 						missHealth = 0.3;
 					}
-					hitCausesMiss = true;
+				case 'Present Note':
+					ignoreNote = mustPress;
+					reloadNote('PRESENT');
+					noteSplashTexture = 'PRESENTnoteSplashes';
+					colorSwap.hue = 0;
+					colorSwap.saturation = 0;
+					colorSwap.brightness = 0;
+					isPresent = true;
 				case 'No Animation':
 					noAnimation = true;
 			}
