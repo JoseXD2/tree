@@ -100,9 +100,9 @@ class Note extends FlxSprite
 					reloadNote('PRESENT');
 					noteSplashTexture = 'PRESENTnoteSplashes';
 					colorSwap.hue = 0;
-					colorSwap.saturation = 0;
+				        colorSwap.saturation = 0;
 					colorSwap.brightness = 0;
-					if(isPresentNote) = true
+					if(isPresentNote) 
 				case 'No Animation':
 					noAnimation = true;
 			}
