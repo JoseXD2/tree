@@ -474,14 +474,14 @@ class PlayState extends MusicBeatState
 					add(fireplace);
 					fireplace.animation.play('idle');
 	
-					bulb:FlxSprite = new FlxSprite();
+					var bulb:FlxSprite = new FlxSprite();
 					bulb.x = -1610;
 					bulb.y = -600;
 					bulb.frames = Paths.getSparrowAtlas('datree/bg/blubs');
 					bulb.animation.addByPrefix('idle', "Symbol 2", 24);
 					bulb.antialiasing = ClientPrefs.globalAntialiasing;
 	
-					jah:FlxSprite = new FlxSprite(); //respect to the homie jah da man -lunar
+					var jah:FlxSprite = new FlxSprite(); //respect to the homie jah da man -lunar
 					jah.x = 610;
 					jah.y = -525;
 					jah.frames = Paths.getSparrowAtlas('datree/bg/deer');
